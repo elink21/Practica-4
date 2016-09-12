@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Elink"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2016-09-01 12:32:50 p. m."/>
+        <attribute name="created" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwNDoyMTo1NSBwLiBtLjsgMjQzMQ=="/>
+        <attribute name="edited" value="RWxpbms7IEVMSUFTOyAyMDE2LTA5LTAxOyAxMjozMjo1MCBwLiBtLjsgMjQyNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NumeroLocales" type="Integer" array="False" size="" variables="NumeroLocales"/>
+            <assign variable="NumeroLocales" expression="0"/>
+            <declare name="SumaLocales" type="Real" array="False" size="" variables="SumaLocales"/>
+            <assign variable="SumaLocales" expression="0"/>
+            <declare name="SumaNacionales" type="Real" array="False" size="" variables="SumaNacionales"/>
+            <assign variable="SumaNacionales" expression="0"/>
+            <declare name="SumaInternacionales" type="Real" array="False" size="" variables="SumaInternacionales"/>
+            <assign variable="SumaInternacionales" expression="0"/>
+            <declare name="Total" type="Real" array="False" size="" variables="Total"/>
+            <assign variable="Total" expression="0"/>
+            <declare name="tipo" type="String" array="False" size="" variables="tipo"/>
+            <assign variable="tipo" expression="&quot;&quot;"/>
+            <declare name="duracion" type="Integer" array="False" size="" variables="duracion"/>
+            <assign variable="duracion" expression="0"/>
+            <while expression="(tipo!=&quot;X&quot;) &amp;&amp; (duracion!=-1)">
+                <output expression="&quot;&#191;Que tipo de llamada se realizo?&quot;"/>
+                <output expression="&quot;&#191;local,nacional o internacional?(introduzca el tipo en minusculas,introduzca &#180;X&#180; en este campo y -1 en duracion para terminar)&quot;"/>
+                <input variable="tipo"/>
+                <if expression="tipo != &quot;local&quot;">
+                    <then>
+                        <output expression="&quot;&#191;Que duracion en minutos tuvo la llamada?&quot;"/>
+                        <input variable="duracion"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tipo==&quot;nacional&quot;">
+                    <then>
+                        <if expression="duracion&gt;3">
+                            <then>
+                                <assign variable="SumaNacionales" expression="SumaNacionales+(duracion*0.5)"/>
+                            </then>
+                            <else>
+                                <assign variable="SumaNacionales" expression="SumaNacionales+(duracion*0.8)"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tipo==&quot;internacional&quot;">
+                    <then>
+                        <if expression="duracion&gt;3">
+                            <then>
+                                <assign variable="SumaInternacionales" expression="SumaInternacionales+(duracion*2)"/>
+                            </then>
+                            <else>
+                                <assign variable="SumaInternacionales" expression="SumaInternacionales+(duracion*5)"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="tipo==&quot;local&quot;">
+                    <then>
+                        <if expression="NumeroLocales&gt;=5">
+                            <then>
+                                <assign variable="SumaLocales" expression="SumaLocales+0.2"/>
+                            </then>
+                            <else>
+                                <assign variable="NumeroLocales" expression="NumeroLocales+1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <assign variable="Total" expression="SumaNacionales+SumaLocales+SumaInternacionales+100"/>
+            <output expression="&quot;El total a pagar es &quot; &amp;Total &amp; &quot;$&quot;"/>
+        </body>
+    </function>
+</flowgorithm>

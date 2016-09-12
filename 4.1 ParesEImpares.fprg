@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Elink"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2016-08-31 05:00:43 p. m."/>
+        <attribute name="created" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTI0OyAxMDo0NzozOCBhLiBtLjsgMjQyNA=="/>
+        <attribute name="edited" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwNTowMDo0MyBwLiBtLjsgMjQyNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size="" variables="numero"/>
+            <declare name="n" type="Integer" array="False" size="" variables="n"/>
+            <declare name="i" type="Integer" array="False" size="" variables="i"/>
+            <declare name="sumapar" type="Integer" array="False" size="" variables="sumapar"/>
+            <assign variable="sumapar" expression="0"/>
+            <declare name="sumainpar" type="Integer" array="False" size="" variables="sumainpar"/>
+            <assign variable="sumainpar" expression="0"/>
+            <declare name="npar" type="Integer" array="False" size="" variables="npar"/>
+            <assign variable="npar" expression="0"/>
+            <declare name="ninpar" type="Integer" array="False" size="" variables="ninpar"/>
+            <assign variable="ninpar" expression="0"/>
+            <declare name="promediopar" type="Real" array="False" size="" variables="promediopar"/>
+            <assign variable="promediopar" expression="0"/>
+            <declare name="promedioinpar" type="Real" array="False" size="" variables="promedioinpar"/>
+            <assign variable="promedioinpar" expression="0"/>
+            <output expression="&quot;Introduzca el numero de elementos&quot;"/>
+            <input variable="n"/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <output expression="&quot;Inserte el valor numero &quot; &amp; i"/>
+                <input variable="numero"/>
+                <if expression="numero%2==0">
+                    <then>
+                        <assign variable="sumapar" expression="sumapar+numero"/>
+                        <assign variable="npar" expression="npar+1"/>
+                    </then>
+                    <else>
+                        <assign variable="sumainpar" expression="sumainpar+numero"/>
+                        <assign variable="ninpar" expression="ninpar+1"/>
+                    </else>
+                </if>
+            </for>
+            <if expression="npar&gt;0">
+                <then>
+                    <assign variable="promediopar" expression="sumapar/npar"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="ninpar&gt;0">
+                <then>
+                    <assign variable="promedioinpar" expression="sumainpar/ninpar"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;La suma de los pares es &quot; &amp;sumapar &amp;&#13;&#10;&quot; y la suma de los impares  es &quot; &amp; sumainpar &amp; &quot;,la suma total es &quot; &amp; sumapar+sumainpar"/>
+            <output expression="&quot;El promedio de los pares es &quot; &amp; promediopar &amp;&#13;&#10;&quot; y el de los impares es &quot; &amp; promedioinpar &amp; &quot;, el promedio total es &quot; &amp; (promediopar+promedioinpar)/2"/>
+        </body>
+    </function>
+</flowgorithm>

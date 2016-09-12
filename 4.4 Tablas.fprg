@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Elink"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2016-08-31 04:46:07 p. m."/>
+        <attribute name="created" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwNDo0MzowMiBwLiBtLjsgMjQyNw=="/>
+        <attribute name="edited" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwNDo0NjowNyBwLiBtLjsgMjQzNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size="" variables="numero"/>
+            <assign variable="numero" expression="0"/>
+            <declare name="i" type="Integer" array="False" size="" variables="i"/>
+            <output expression="&quot;Introduzca el entero para imprimir su tabla del 0 al 20&quot;"/>
+            <input variable="numero"/>
+            <for variable="i" start="0" end="20" direction="inc" step="1">
+                <output expression="numero&amp;&quot;x&quot;&amp;i&amp;&quot; = &quot;&amp;numero*i"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

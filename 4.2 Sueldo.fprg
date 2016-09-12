@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Elink"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2016-08-31 09:26:35 p. m."/>
+        <attribute name="created" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwNDoxMjoxOCBwLiBtLjsgMjQzMA=="/>
+        <attribute name="edited" value="RWxpbms7IEVMSUFTOyAyMDE2LTA4LTMxOyAwOToyNjozNSBwLiBtLjsgMjQzOQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="puesto" type="String" array="False" size="" variables="puesto"/>
+            <output expression="&quot;Por favor introduzca su puesto completo de acuerdo a las opciones(Nombre exacto)&quot;"/>
+            <output expression="&quot;-Obrero&quot;"/>
+            <output expression="&quot;-Administrativo&quot;"/>
+            <output expression="&quot;-Jefe de piso&quot;"/>
+            <output expression="&quot;-Gerente de area&quot;"/>
+            <input variable="puesto"/>
+            <if expression="puesto==&quot;Obrero&quot;">
+                <then>
+                    <output expression="&quot;Su suelo mensual es de &quot; &amp; 750*4 &amp; &quot;$&quot;"/>
+                </then>
+                <else>
+                    <if expression="puesto==&quot;Administrativo&quot;">
+                        <then>
+                            <output expression="&quot;Su suelo mensual es de &quot; &amp; 1200*4 &amp; &quot;$&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="puesto==&quot;Jefe de piso&quot;">
+                                <then>
+                                    <output expression="&quot;Su suelo mensual es de &quot; &amp; 2500*4 &amp; &quot;$&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="puesto==&quot;Gerente de area&quot;">
+                                        <then>
+                                            <output expression="&quot;Su suelo mensual es de &quot; &amp; 5000*4 &amp; &quot;$&quot;"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Puesto invalido&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
